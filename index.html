@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube 1-Click Downloader</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f8f9fa; padding-top: 50px; }
+        .box { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input { width: 85%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+        .btn-main { background-color: #ff0000; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-weight: bold; }
+        .btn-main:hover { background-color: #cc0000; }
+        #status { margin-top: 20px; font-size: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header Adsterra Banner Ad Yahan Aayega -->
+    <div style="text-align: center; margin-bottom: 15px;">
+        <!-- Adsterra ka pehla Banner Script yahan paste karna hai -->
+    </div>
+
+    <div class="box">
+        <h2>YouTube 1-Click Downloader</h2>
+        <p>Apna YouTube Video Link yahan dalein:</p>
+        
+        <input type="text" id="userInput" placeholder="https://youtube.com/watch?v=...">
+        <button class="btn-main" onclick="fetchVideo()">Download Final MP4</button>
+
+        <div id="status"></div>
+    </div>
+
+    <!-- 2. Footer Adsterra Banner Ad Yahan Aayega -->
+    <div style="text-align: center; margin-top: 15px;">
+        <!-- Adsterra ka doosra Banner Script yahan paste karna hai -->
+    </div>
+
+    <script>
+        function fetchVideo() {
+            const inputLink = document.getElementById('userInput').value;
+            const statusDiv = document.getElementById('status');
+            
+            if (!inputLink.includes("youtube.com") && !inputLink.includes("youtu.be")) {
+                statusDiv.innerHTML = "<span style='color:red;'>Kripya sahi YouTube link dalein!</span>";
+                return;
+            }
+
+            statusDiv.innerHTML = "<span style='color:orange;'>Processing video... Please wait ⏳</span>";
+
+            // Live server ke liye Localhost ki jagah ab relative URL lagaya gaya hai
+            const backendUrl = '/download?url=' + encodeURIComponent(inputLink);
+
+            // Browser naya tab open karne ke bajaye background me direct download force karega
+            window.location.href = backendUrl;
+            
+            // 3 seconds baad success status update
+            setTimeout(() => {
+                statusDiv.innerHTML = "<span style='color:green;'>✅ Download Started! File automatically save ho rahi hai.</span>";
+            }, 3000);
+        }
+    </script>
+
+    <!-- 3. Adsterra / Monetag Pop-Under Script Yahan Aayega (Body band hone se theek pehle) -->
+    
+</body>
+</html>
