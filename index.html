@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; text-align: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin: 0; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-        .box { width: 100%; max-width: 500px; background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 20px 0; }
+        .box { width: 100%; max-width: 500px; background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 15px 0; }
         h2 { color: #2d3748; font-weight: 700; margin-bottom: 10px; font-size: 22px; }
         p { color: #718096; font-size: 14px; margin-bottom: 20px; }
         input, select { width: 90%; padding: 12px; margin-bottom: 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; font-family: 'Poppins', sans-serif; box-sizing: border-box; }
@@ -15,17 +15,29 @@
         .btn-main { background: linear-gradient(90deg, #ff0000, #cc0000); color: white; padding: 14px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: 600; width: 90%; font-family: 'Poppins', sans-serif; }
         .btn-main:hover { background: linear-gradient(90deg, #cc0000, #990000); }
         #status { margin-top: 20px; font-size: 14px; font-weight: 600; border-radius: 8px; }
-        .ad-container { width: 100%; max-width: 320px; min-height: 50px; background: transparent; display: flex; justify-content: center; align-items: center; margin: 10px 0; overflow: hidden; }
+        
+        /* Naya: Banner Ads Layout Styling */
+        .ad-section { display: flex; flex-direction: column; gap: 10px; align-items: center; width: 100%; }
+        .ad-container { width: 100%; max-width: 320px; min-height: 50px; background: transparent; display: flex; justify-content: center; align-items: center; overflow: hidden; }
     </style>
 </head>
 <body>
 
-    <!-- 1. TOP BANNER AD -->
-    <div class="ad-container">
-        <script async="async" data-cfasync="false" src="https://pl31144893.profitableratecpmnetwork.com/db5124c8d5a4c82c8e406e8c556bab1f/invoke.js"></script>
-        <div id="container-db5124c8d5a4c82c8e406e8c556bab1f"></div>
+    <!-- ================= 2 TOP BANNER ADS ================= -->
+    <div class="ad-section">
+        <!-- Top Ad 1 -->
+        <div class="ad-container">
+            <script async="async" data-cfasync="false" src="https://pl31144893.profitableratecpmnetwork.com/db5124c8d5a4c82c8e406e8c556bab1f/invoke.js"></script>
+            <div id="container-db5124c8d5a4c82c8e406e8c556bab1f"></div>
+        </div>
+        <!-- Top Ad 2 -->
+        <div class="ad-container">
+            <script async="async" data-cfasync="false" src="https://pl31144893.profitableratecpmnetwork.com/db5124c8d5a4c82c8e406e8c556bab1f/invoke.js"></script>
+            <div id="container-db5124c8d5a4c82c8e406e8c556bab1f"></div>
+        </div>
     </div>
 
+    <!-- ================= MAIN DOWNLOAD BOX ================= -->
     <div class="box">
         <h2>YouTube 1-Click Downloader</h2>
         <p>Paste your YouTube link and select quality.</p>
@@ -45,12 +57,21 @@
         <div id="status"></div>
     </div>
 
-    <!-- 2. BOTTOM BANNER AD -->
-    <div class="ad-container">
-        <script async="async" data-cfasync="false" src="https://pl31144893.profitableratecpmnetwork.com/db5124c8d5a4c82c8e406e8c556bab1f/invoke.js"></script>
-        <div id="container-db5124c8d5a4c82c8e406e8c556bab1f"></div>
+    <!-- ================= 2 BOTTOM BANNER ADS ================= -->
+    <div class="ad-section">
+        <!-- Bottom Ad 1 -->
+        <div class="ad-container">
+            <script async="async" data-cfasync="false" src="https://pl31144893.profitableratecpmnetwork.com/db5124c8d5a4c82c8e406e8c556bab1f/invoke.js"></script>
+            <div id="container-db5124c8d5a4c82c8e406e8c556bab1f"></div>
+        </div>
+        <!-- Bottom Ad 2 -->
+        <div class="ad-container">
+            <script async="async" data-cfasync="false" src="https://pl31144893.profitableratecpmnetwork.com/db5124c8d5a4c82c8e406e8c556bab1f/invoke.js"></script>
+            <div id="container-db5124c8d5a4c82c8e406e8c556bab1f"></div>
+        </div>
     </div>
 
+    <!-- Script Logic -->
     <script>
         function fetchVideo() {
             const inputLink = document.getElementById('userInput').value;
@@ -73,7 +94,11 @@
         }
     </script>
 
-    <!-- 3. Adsterra Pop-Under Script -->
+    <!-- Adsterra Pop-Under Script -->
     <script src="https://pl31144559.profitableratecpmnetwork.com/46/8a/07/468a07f692f307cd7fb88aec5a4294f6.js"></script>
+    
+    <!-- Adsterra Social Bar (Video/Interstitial) Script -->
+    <script src="https://pl31145100.profitableratecpmnetwork.com/5b/53/12/5b5312faf629ffcad50ec447a7f27911.js"></script>
+
 </body>
 </html>
