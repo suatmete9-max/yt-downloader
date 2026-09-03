@@ -16,13 +16,13 @@ content="2Yh9DxrZDIn26KJagZnqxf37ZJi6Q0VtUlasjb2Cpr4" />
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>YouTube Video & Shorts Downloader - Free Online</title>
+<title>Video & Shorts Downloader - Free Online</title>
 
 <meta name="description"
-content="Download YouTube videos and Shorts online in MP4. Fast, free and easy video downloader.">
+content="Download videos and Shorts online in MP4. Fast, free and easy video downloader.">
 
 <meta name="keywords"
-content="youtube downloader, youtube shorts downloader, video downloader, mp4 downloader, free video downloader">
+content="video downloader, mp4 downloader, free video downloader">
 
 <meta name="robots"
 content="index, follow">
@@ -31,7 +31,7 @@ content="index, follow">
 <meta property="og:url"
 content="https://yt-downloader-rt9h.onrender.com/">
 <meta property="og:title"
-content="YouTube Video & Shorts Downloader">
+content="Video & Shorts Downloader">
 <meta property="og:description"
 content="Download videos and Shorts online for free.">
 
@@ -39,7 +39,7 @@ content="Download videos and Shorts online for free.">
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"YouTube Video & Shorts Downloader",
+  "name":"Video & Shorts Downloader",
   "url":"https://yt-downloader-rt9h.onrender.com/",
   "description":"Free online video downloader.",
   "applicationCategory":"MultimediaApplication",
@@ -266,10 +266,6 @@ h1{
     box-shadow:0 5px 12px rgba(0,0,0,.14);
 }
 
-.youtube{
-    background:#ff0000;
-}
-
 .instagram{
     background:
         linear-gradient(
@@ -365,6 +361,46 @@ select{
 
 .btn-main:active{
     transform:scale(.99);
+}
+
+/* ================= EXTERNAL SOCIAL BUTTONS ================= */
+
+.social-links-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:14px;
+}
+
+.btn-social{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 12px;
+    border-radius:14px;
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.2s;
+    box-shadow:0 6px 16px rgba(0,0,0,.10);
+}
+
+.btn-social:hover{
+    transform:translateY(-2px);
+}
+
+.btn-social-fb{
+    background:#1877f2;
+}
+
+.btn-social-ig{
+    background:linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.btn-social-tt{
+    background:#080808;
 }
 
 #status{
@@ -627,7 +663,7 @@ footer{
 
 
         <h1>
-            YouTube Video &amp;<br>
+            Video &amp;<br>
             Shorts Downloader
         </h1>
 
@@ -659,10 +695,6 @@ footer{
 
         <div class="platforms">
 
-            <div class="icon youtube">
-                ▶
-            </div>
-
             <div class="icon instagram">
                 ◎
             </div>
@@ -687,7 +719,7 @@ footer{
         <input
             type="text"
             id="userInput"
-            placeholder="🔗  Paste YouTube link here (Video or Shorts)"
+            placeholder="🔗  Paste video link here"
             autocomplete="off"
         >
 
@@ -723,6 +755,25 @@ footer{
         >
             ☁️ &nbsp; Download Video
         </button>
+
+
+        <!-- CLICKABLE SOCIAL BUTTONS DIRECTING TO MY-FAST-DOWNLOADER -->
+
+        <div class="social-links-grid">
+
+            <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-fb">
+                f Facebook Downloader
+            </a>
+
+            <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-ig">
+                ◎ Instagram Downloader
+            </a>
+
+            <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-tt">
+                ♪ TikTok Downloader
+            </a>
+
+        </div>
 
 
         <div id="status"></div>
@@ -799,8 +850,8 @@ footer{
                 </strong>
 
                 <small>
-                    YouTube, Instagram,
-                    TikTok, Facebook &amp; more.
+                    Instagram, TikTok,
+                    Facebook &amp; more.
                 </small>
 
             </div>
