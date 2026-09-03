@@ -6,6 +6,9 @@
 <!-- Monetag Site Verification -->
 <meta name="monetag" content="fd42cd4ef7af210ddd12ed632755471e">
 
+<!-- Monetag Vignette Banner Script (Clean Native Banner Zone) -->
+<script>(function(s){s.dataset.zone='11717858',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 <meta name="google-site-verification" content="2Yh9DxrZDIn26KJagZnqxf37ZJi6Q0VtUlasjb2Cpr4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -453,7 +456,7 @@ footer {
             <div class="icon plus">＋</div>
         </div>
 
-        <!-- VIDEO URL INPUT (100% Ad-Free) -->
+        <!-- VIDEO URL INPUT (Zero Ads) -->
         <input
             type="text"
             id="userInput"
@@ -474,7 +477,7 @@ footer {
             ☁️ &nbsp; Download Video
         </button>
 
-        <!-- SOCIAL BUTTONS (100% Ad-Free) -->
+        <!-- SOCIAL BUTTONS (Zero Ads) -->
         <div class="social-links-grid">
             <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-fb">
                 f Facebook Downloader
@@ -531,20 +534,20 @@ footer {
 
 </div>
 
-<!-- ================= 5-MINUTE HIGH-EARNING DOWNLOAD LOGIC ================= -->
+<!-- ================= 5-MINUTE CONTROLLED HIGH-EARNING LOGIC ================= -->
 <script>
-// 5 Minute Cooldown (5 * 60 * 1000 = 300,000 milliseconds)
+// 5 Minute Cooldown (300,000 milliseconds)
 const AD_COOLDOWN_TIME = 5 * 60 * 1000; 
 
 function triggerMonetagAd() {
     const lastAdTime = localStorage.getItem('last_user_monetag_ad');
     const currentTime = Date.now();
 
-    // Pehle download par turant ad load hoga; agle 5 minute tak koi ad nahi
+    // Pehle download par guaranteed trigger, fir 5 minute cooldown
     if (!lastAdTime || (currentTime - lastAdTime) > AD_COOLDOWN_TIME) {
         localStorage.setItem('last_user_monetag_ad', currentTime);
 
-        // Monetag Zone 11717810
+        // Monetag Zone 11717810 OnClick script
         (function(s){
             s.dataset.zone = '11717810';
             s.src = 'https://al5sm.com/tag.min.js';
@@ -564,7 +567,7 @@ function fetchVideo(){
 
     statusDiv.innerHTML = "<div style='background:#fff7d6;color:#c77700;padding:12px;border-radius:10px;'>Processing video... ⏳</div>";
 
-    // 5-minute interval ad trigger
+    // 5-minute timed ad trigger
     triggerMonetagAd();
 
     const backendUrl = `/download?url=${encodeURIComponent(inputLink)}&quality=${quality}`;
