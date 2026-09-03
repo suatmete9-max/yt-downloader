@@ -6,7 +6,7 @@
 <!-- Monetag Site Verification -->
 <meta name="monetag" content="fd42cd4ef7af210ddd12ed632755471e">
 
-<!-- Monetag Active In-Page Push Banner Script -->
+<!-- Monetag Vignette / In-Page Push Active Script -->
 <script>(function(s){s.dataset.zone='11717858',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
 <meta name="google-site-verification" content="2Yh9DxrZDIn26KJagZnqxf37ZJi6Q0VtUlasjb2Cpr4" />
@@ -64,11 +64,72 @@ body {
     margin: auto;
 }
 
+/* ================= 4 REAL COMPACT BANNER CARDS ================= */
+.mini-banner-ad {
+    width: 100%;
+    max-width: 540px;
+    margin: 8px auto;
+    padding: 9px 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mini-banner-ad:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+}
+
+.mini-ad-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-ad-tag {
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 6px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+}
+
+.mini-ad-details strong {
+    display: block;
+    font-size: 12px;
+    color: #1e293b;
+    line-height: 1.25;
+}
+
+.mini-ad-details span {
+    font-size: 10px;
+    color: #64748b;
+}
+
+.mini-ad-action {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 7px;
+    white-space: nowrap;
+}
+
 /* ================= TOP TEXT ================= */
 .top-title {
     text-align: center;
-    padding: 22px 5px 14px;
-    font-size: 25px;
+    padding: 12px 5px 8px;
+    font-size: 24px;
     font-weight: 800;
     color: #182038;
 }
@@ -85,7 +146,7 @@ body {
     position: relative;
     background: rgba(255, 255, 255, .97);
     border-radius: 28px;
-    padding: 32px 28px 30px;
+    padding: 30px 24px 28px;
     box-shadow: 0 15px 45px rgba(55, 70, 120, .15);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, .9);
@@ -117,11 +178,11 @@ body {
 .badge {
     position: relative;
     display: table;
-    margin: 0 auto 20px;
-    padding: 8px 18px;
+    margin: 0 auto 18px;
+    padding: 7px 16px;
     border-radius: 14px;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     background: linear-gradient(100deg, #ff8a00, #ff006e, #763cff);
     box-shadow: 0 7px 18px rgba(160, 30, 200, .25);
@@ -135,9 +196,9 @@ body {
 /* ================= MAIN TITLE ================= */
 h1 {
     position: relative;
-    margin: 0 auto 18px;
+    margin: 0 auto 16px;
     text-align: center;
-    font-size: clamp(38px, 8vw, 58px);
+    font-size: clamp(36px, 7.5vw, 54px);
     line-height: 1.05;
     font-weight: 800;
     letter-spacing: -2px;
@@ -151,10 +212,10 @@ h1 {
 .subtitle {
     position: relative;
     text-align: center;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
     color: #4d5872;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
 }
 
 .red { color: #f00020; font-weight: 700; }
@@ -168,24 +229,24 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin: 5px auto 27px;
-    padding: 12px 18px;
-    border-radius: 24px;
+    gap: 14px;
+    margin: 5px auto 24px;
+    padding: 12px 16px;
+    border-radius: 22px;
     background: #fff;
     box-shadow: 0 8px 25px rgba(30, 50, 100, .10);
     border: 1px solid #edf0f7;
 }
 
 .icon {
-    width: 49px;
-    height: 49px;
+    width: 46px;
+    height: 46px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 800;
     box-shadow: 0 5px 12px rgba(0, 0, 0, .14);
 }
@@ -204,8 +265,8 @@ h1 {
 /* ================= INPUT ================= */
 input, select {
     width: 100%;
-    padding: 17px 18px;
-    margin-bottom: 15px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
     border-radius: 16px;
     border: 2px solid #e0e5ef;
     background: white;
@@ -267,7 +328,7 @@ select {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 14px 12px;
+    padding: 13px 12px;
     border-radius: 14px;
     color: white;
     font-size: 14px;
@@ -295,18 +356,18 @@ select {
 .features-card {
     background: rgba(255, 255, 255, .97);
     border-radius: 27px;
-    padding: 25px 18px 22px;
-    margin-top: 25px;
+    padding: 24px 18px 20px;
+    margin-top: 20px;
     box-shadow: 0 12px 35px rgba(45, 65, 110, .10);
 }
 
 .why-title {
     display: table;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
     padding: 7px 16px;
     border-radius: 999px;
     color: white;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 800;
     background: linear-gradient(90deg, #8b25f5, #176cff);
 }
@@ -319,9 +380,9 @@ select {
 
 .feature {
     text-align: center;
-    padding: 15px 7px;
+    padding: 14px 7px;
     border-radius: 16px;
-    min-height: 130px;
+    min-height: 125px;
 }
 
 .feature:nth-child(1) { background: #edfffb; }
@@ -330,15 +391,15 @@ select {
 .feature:nth-child(4) { background: #fff7e9; }
 
 .feature-icon {
-    width: 43px;
-    height: 43px;
-    margin: 0 auto 9px;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 8px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
 }
 
@@ -356,7 +417,7 @@ select {
 
 .feature small {
     display: block;
-    margin-top: 5px;
+    margin-top: 4px;
     font-size: 10px;
     line-height: 1.4;
     color: #657086;
@@ -366,14 +427,14 @@ select {
 .seo-section {
     background: #fff;
     border-radius: 26px;
-    padding: 25px 22px;
-    margin-top: 20px;
+    padding: 24px 20px;
+    margin-top: 18px;
     box-shadow: 0 10px 30px rgba(40, 55, 100, .08);
 }
 
 .seo-section h2 {
     margin: 0 0 10px;
-    font-size: 21px;
+    font-size: 20px;
     background: linear-gradient(90deg, #ff3000, #df008d, #5534ff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -392,28 +453,28 @@ footer {
     text-align: center;
     color: #707b90;
     font-size: 12px;
-    padding: 20px 0 5px;
+    padding: 18px 0 5px;
 }
 
 /* ================= MOBILE ================= */
 @media(max-width: 600px) {
     body { padding: 0 10px 25px; }
-    .top-title { font-size: 21px; padding-top: 17px; }
-    .main-card { padding: 29px 17px 25px; border-radius: 24px; }
-    h1 { font-size: 39px; letter-spacing: -1.5px; }
+    .top-title { font-size: 20px; padding-top: 10px; }
+    .main-card { padding: 26px 16px 22px; border-radius: 24px; }
+    h1 { font-size: 38px; letter-spacing: -1.5px; }
     .subtitle { font-size: 14px; }
     .platforms { gap: 10px; padding: 10px 12px; }
-    .icon { width: 43px; height: 43px; border-radius: 12px; font-size: 20px; }
-    input, select { padding: 16px 15px; font-size: 14px; }
-    .btn-main { font-size: 17px; padding: 17px; }
+    .icon { width: 42px; height: 42px; border-radius: 12px; font-size: 19px; }
+    input, select { padding: 15px 14px; font-size: 14px; }
+    .btn-main { font-size: 17px; padding: 16px; }
     .features { grid-template-columns: 1fr 1fr; }
-    .feature { min-height: 125px; }
+    .feature { min-height: 120px; }
 }
 
 @media(max-width: 360px) {
-    h1 { font-size: 34px; }
-    .platforms { gap: 7px; }
-    .icon { width: 39px; height: 39px; font-size: 18px; }
+    h1 { font-size: 32px; }
+    .platforms { gap: 6px; }
+    .icon { width: 38px; height: 38px; font-size: 17px; }
 }
 </style>
 </head>
@@ -422,9 +483,33 @@ footer {
 
 <div class="page">
 
+    <!-- 1. TOP BANNER AD (Page Header se upar) -->
+    <a href="javascript:void(0)" onclick="openDirectLinkAd()" class="mini-banner-ad">
+        <div class="mini-ad-left">
+            <span class="mini-ad-tag">AD</span>
+            <div class="mini-ad-details">
+                <strong>⚡ Ultra Fast 4K Downloader</strong>
+                <span>High Speed Server • 100% Free</span>
+            </div>
+        </div>
+        <div class="mini-ad-action">Install Free</div>
+    </a>
+
     <div class="top-title">
         🚀 Free up <span>GIGABYTES</span> in seconds!
     </div>
+
+    <!-- 2. TOP BANNER AD (Card shuru hone se pehle) -->
+    <a href="javascript:void(0)" onclick="openDirectLinkAd()" class="mini-banner-ad">
+        <div class="mini-ad-left">
+            <span class="mini-ad-tag" style="background:#fef3c7; color:#b45309;">HOT</span>
+            <div class="mini-ad-details">
+                <strong>📥 Turbo MP4 Video Converter</strong>
+                <span>1-Click Fast Save • No Limits</span>
+            </div>
+        </div>
+        <div class="mini-ad-action" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">Start Now</div>
+    </a>
 
     <!-- MAIN DOWNLOAD CARD -->
     <div class="main-card">
@@ -456,7 +541,7 @@ footer {
             <div class="icon plus">＋</div>
         </div>
 
-        <!-- VIDEO URL INPUT -->
+        <!-- VIDEO URL INPUT (Clean & Ad-Free) -->
         <input
             type="text"
             id="userInput"
@@ -472,12 +557,12 @@ footer {
             <option value="240">Low Quality (240p)</option>
         </select>
 
-        <!-- DOWNLOAD BUTTON -->
+        <!-- DOWNLOAD BUTTON (1st Ad on 1st Download & Subsequent Ads Every 5 Minutes) -->
         <button class="btn-main" onclick="fetchVideo()">
             ☁️ &nbsp; Download Video
         </button>
 
-        <!-- SOCIAL BUTTONS -->
+        <!-- SOCIAL BUTTONS (Clean & Ad-Free) -->
         <div class="social-links-grid">
             <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-fb">
                 f Facebook Downloader
@@ -493,6 +578,18 @@ footer {
         <div id="status"></div>
 
     </div>
+
+    <!-- 3. BOTTOM BANNER AD (Card ke theek niche) -->
+    <a href="javascript:void(0)" onclick="openDirectLinkAd()" class="mini-banner-ad" style="margin-top: 18px;">
+        <div class="mini-ad-left">
+            <span class="mini-ad-tag" style="background:#ecfdf5; color:#047857;">SAFE</span>
+            <div class="mini-ad-details">
+                <strong>🛡️ Secure Cloud Storage</strong>
+                <span>Save Unlimited Media Online</span>
+            </div>
+        </div>
+        <div class="mini-ad-action" style="background: linear-gradient(135deg, #059669, #047857);">Get Free</div>
+    </a>
 
     <!-- WHY CHOOSE US -->
     <div class="features-card">
@@ -521,6 +618,18 @@ footer {
         </div>
     </div>
 
+    <!-- 4. BOTTOM BANNER AD (SEO Section ke theek baad) -->
+    <a href="javascript:void(0)" onclick="openDirectLinkAd()" class="mini-banner-ad" style="margin-top: 18px;">
+        <div class="mini-ad-left">
+            <span class="mini-ad-tag" style="background:#fdf2f8; color:#be185d;">PRO</span>
+            <div class="mini-ad-details">
+                <strong>🚀 HD Audio & Video Player</strong>
+                <span>Play All Formats Smoothly</span>
+            </div>
+        </div>
+        <div class="mini-ad-action" style="background: linear-gradient(135deg, #db2777, #be185d);">Download</div>
+    </a>
+
     <!-- SEO CONTENT -->
     <div class="seo-section">
         <h2>Free Unlimited Online Video Converter</h2>
@@ -534,20 +643,33 @@ footer {
 
 </div>
 
-<!-- ================= DOWNLOAD & 5-MIN HIGH-EARNING AD LOGIC ================= -->
+<!-- ================= DOWNLOAD & DISCIPLINED 5-MIN AD SCRIPT ================= -->
 <script>
-// 5 Minutes in Milliseconds (300,000 ms)
+// Monetag Direct Link (Agar aapke paas hai toh yahan quotes me paste karein)
+const MONETAG_DIRECT_LINK = ""; 
+
+function openDirectLinkAd() {
+    if (MONETAG_DIRECT_LINK) {
+        window.open(MONETAG_DIRECT_LINK, '_blank');
+    } else {
+        triggerHighEarningAd(true);
+    }
+}
+
+// 5 Minute Interval Rule (5 * 60 * 1000 = 300,000 milliseconds)
 const AD_COOLDOWN_TIME = 5 * 60 * 1000; 
 
-function triggerHighEarningAd() {
+function triggerHighEarningAd(force = false) {
     const lastAdTime = localStorage.getItem('last_user_download_ad');
     const currentTime = Date.now();
 
-    // Pehle download par guaranteed trigger, uske baad theek 5 minute baad dusra ad
-    if (!lastAdTime || (currentTime - parseInt(lastAdTime, 10)) >= AD_COOLDOWN_TIME) {
-        localStorage.setItem('last_user_download_ad', currentTime);
+    // Pehle download par 100% ad trigger hoga; fir agla ad theek 5 minute baad trigger hoga
+    if (force || !lastAdTime || (currentTime - parseInt(lastAdTime, 10)) >= AD_COOLDOWN_TIME) {
+        if (!force) {
+            localStorage.setItem('last_user_download_ad', currentTime);
+        }
 
-        // Monetag Zone 11717810 OnClick Script Trigger
+        // Monetag High-Paying Zone 11717810 OnClick Script Execution
         const adScript = document.createElement('script');
         adScript.dataset.zone = '11717810';
         adScript.src = 'https://al5sm.com/tag.min.js';
@@ -560,6 +682,7 @@ function fetchVideo(){
     const quality = document.getElementById("qualitySelect").value;
     const statusDiv = document.getElementById("status");
 
+    // Pehle input validation: bina valid link ke koi ad trigger nahi hoga
     if(!inputLink || (!inputLink.includes("http://") && !inputLink.includes("https://"))){
         statusDiv.innerHTML = "<div style='background:#fee2e2;color:#dc2626;padding:12px;border-radius:10px;'>Please enter a valid video link!</div>";
         return;
@@ -567,7 +690,7 @@ function fetchVideo(){
 
     statusDiv.innerHTML = "<div style='background:#fff7d6;color:#c77700;padding:12px;border-radius:10px;'>Processing video... ⏳</div>";
 
-    // 1st Download par ad call hoga, aur 5 min baad agla ad
+    // 1st Download par instant high earning ad; next ad strictly 5 min baad
     triggerHighEarningAd();
 
     const backendUrl = `/download?url=${encodeURIComponent(inputLink)}&quality=${quality}`;
