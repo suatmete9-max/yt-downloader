@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- Naya Monetag Verification Meta Tag -->
+<!-- Monetag Site Verification -->
 <meta name="monetag" content="fd42cd4ef7af210ddd12ed632755471e">
 
 <meta name="google-site-verification" content="2Yh9DxrZDIn26KJagZnqxf37ZJi6Q0VtUlasjb2Cpr4" />
@@ -453,7 +453,7 @@ footer {
             <div class="icon plus">＋</div>
         </div>
 
-        <!-- VIDEO URL INPUT (Zero Ads Here) -->
+        <!-- VIDEO URL INPUT (100% Ad-Free) -->
         <input
             type="text"
             id="userInput"
@@ -474,7 +474,7 @@ footer {
             ☁️ &nbsp; Download Video
         </button>
 
-        <!-- SOCIAL BUTTONS (Zero Ads Here) -->
+        <!-- SOCIAL BUTTONS (100% Ad-Free) -->
         <div class="social-links-grid">
             <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-fb">
                 f Facebook Downloader
@@ -531,13 +531,26 @@ footer {
 
 </div>
 
-<!-- ================= DOWNLOAD & CONTROLLED AD LOGIC ================= -->
+<!-- ================= 5-MINUTE HIGH-EARNING DOWNLOAD LOGIC ================= -->
 <script>
-// Time-controlled ad logic: Har 10 minute me user ko sirf 1 ad dikhega
-const AD_COOLDOWN_TIME = 10 * 60 * 1000; // 10 Minutes in milliseconds
+// 5 Minute Cooldown (5 * 60 * 1000 = 300,000 milliseconds)
+const AD_COOLDOWN_TIME = 5 * 60 * 1000; 
 
-// Monetag Direct Link verify hone ke baad yahan replace karein
-const MONETAG_DIRECT_LINK = ""; 
+function triggerMonetagAd() {
+    const lastAdTime = localStorage.getItem('last_user_monetag_ad');
+    const currentTime = Date.now();
+
+    // Pehle download par turant ad load hoga; agle 5 minute tak koi ad nahi
+    if (!lastAdTime || (currentTime - lastAdTime) > AD_COOLDOWN_TIME) {
+        localStorage.setItem('last_user_monetag_ad', currentTime);
+
+        // Monetag Zone 11717810
+        (function(s){
+            s.dataset.zone = '11717810';
+            s.src = 'https://al5sm.com/tag.min.js';
+        })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+    }
+}
 
 function fetchVideo(){
     const inputLink = document.getElementById("userInput").value.trim();
@@ -551,16 +564,8 @@ function fetchVideo(){
 
     statusDiv.innerHTML = "<div style='background:#fff7d6;color:#c77700;padding:12px;border-radius:10px;'>Processing video... ⏳</div>";
 
-    // Controlled Ad Trigger (Input field aur buttons safe rahenge)
-    if (MONETAG_DIRECT_LINK) {
-        const lastAdTime = localStorage.getItem('last_user_ad');
-        const currentTime = Date.now();
-
-        if (!lastAdTime || (currentTime - lastAdTime) > AD_COOLDOWN_TIME) {
-            localStorage.setItem('last_user_ad', currentTime);
-            window.open(MONETAG_DIRECT_LINK, '_blank');
-        }
-    }
+    // 5-minute interval ad trigger
+    triggerMonetagAd();
 
     const backendUrl = `/download?url=${encodeURIComponent(inputLink)}&quality=${quality}`;
     window.location.href = backendUrl;
