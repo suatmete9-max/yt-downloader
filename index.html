@@ -6,7 +6,7 @@
 <!-- Monetag Site Verification -->
 <meta name="monetag" content="fd42cd4ef7af210ddd12ed632755471e">
 
-<!-- Monetag Vignette Banner Script (Clean Native Banner Zone) -->
+<!-- Monetag Vignette Banner Script -->
 <script>(function(s){s.dataset.zone='11717858',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
 <meta name="google-site-verification" content="2Yh9DxrZDIn26KJagZnqxf37ZJi6Q0VtUlasjb2Cpr4" />
@@ -64,11 +64,33 @@ body {
     margin: auto;
 }
 
+/* ================= COMPACT BANNER SLOTS ================= */
+.mini-ad-slot {
+    width: 100%;
+    max-width: 468px;
+    min-height: 50px;
+    margin: 10px auto;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px dashed rgba(112, 69, 255, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.mini-ad-slot span {
+    font-size: 11px;
+    color: #8c93a8;
+    font-weight: 500;
+}
+
 /* ================= TOP TEXT ================= */
 .top-title {
     text-align: center;
-    padding: 22px 5px 14px;
-    font-size: 25px;
+    padding: 14px 5px 8px;
+    font-size: 24px;
     font-weight: 800;
     color: #182038;
 }
@@ -422,8 +444,18 @@ footer {
 
 <div class="page">
 
+    <!-- TOP MINI BANNER 1 -->
+    <div class="mini-ad-slot">
+        <span>Sponsored Ad Space (Top 1)</span>
+    </div>
+
     <div class="top-title">
         🚀 Free up <span>GIGABYTES</span> in seconds!
+    </div>
+
+    <!-- TOP MINI BANNER 2 -->
+    <div class="mini-ad-slot">
+        <span>Sponsored Ad Space (Top 2)</span>
     </div>
 
     <!-- MAIN DOWNLOAD CARD -->
@@ -456,7 +488,7 @@ footer {
             <div class="icon plus">＋</div>
         </div>
 
-        <!-- VIDEO URL INPUT (Zero Ads) -->
+        <!-- VIDEO URL INPUT -->
         <input
             type="text"
             id="userInput"
@@ -472,12 +504,12 @@ footer {
             <option value="240">Low Quality (240p)</option>
         </select>
 
-        <!-- DOWNLOAD BUTTON -->
+        <!-- DOWNLOAD BUTTON (High Earning 1st Ad & 5-Min Cooldown Trigger) -->
         <button class="btn-main" onclick="fetchVideo()">
             ☁️ &nbsp; Download Video
         </button>
 
-        <!-- SOCIAL BUTTONS (Zero Ads) -->
+        <!-- SOCIAL BUTTONS -->
         <div class="social-links-grid">
             <a href="https://my-fast-downloader-7z8r.onrender.com/" target="_blank" class="btn-social btn-social-fb">
                 f Facebook Downloader
@@ -492,6 +524,11 @@ footer {
 
         <div id="status"></div>
 
+    </div>
+
+    <!-- BOTTOM MINI BANNER 1 -->
+    <div class="mini-ad-slot">
+        <span>Sponsored Ad Space (Bottom 1)</span>
     </div>
 
     <!-- WHY CHOOSE US -->
@@ -521,6 +558,11 @@ footer {
         </div>
     </div>
 
+    <!-- BOTTOM MINI BANNER 2 -->
+    <div class="mini-ad-slot">
+        <span>Sponsored Ad Space (Bottom 2)</span>
+    </div>
+
     <!-- SEO CONTENT -->
     <div class="seo-section">
         <h2>Free Unlimited Online Video Converter</h2>
@@ -534,24 +576,24 @@ footer {
 
 </div>
 
-<!-- ================= 5-MINUTE CONTROLLED HIGH-EARNING LOGIC ================= -->
+<!-- ================= DOWNLOAD & 5-MIN HIGH-EARNING AD LOGIC ================= -->
 <script>
-// 5 Minute Cooldown (300,000 milliseconds)
+// 5 Minutes in Milliseconds (5 * 60 * 1000 = 300,000 ms)
 const AD_COOLDOWN_TIME = 5 * 60 * 1000; 
 
-function triggerMonetagAd() {
-    const lastAdTime = localStorage.getItem('last_user_monetag_ad');
+function triggerHighEarningAd() {
+    const lastAdTime = localStorage.getItem('last_user_download_ad');
     const currentTime = Date.now();
 
-    // Pehle download par guaranteed trigger, fir 5 minute cooldown
-    if (!lastAdTime || (currentTime - lastAdTime) > AD_COOLDOWN_TIME) {
-        localStorage.setItem('last_user_monetag_ad', currentTime);
+    // Pehle download par guaranteed trigger, uske baad theek 5 minute baad dusra ad
+    if (!lastAdTime || (currentTime - parseInt(lastAdTime, 10)) >= AD_COOLDOWN_TIME) {
+        localStorage.setItem('last_user_download_ad', currentTime);
 
-        // Monetag Zone 11717810 OnClick script
-        (function(s){
-            s.dataset.zone = '11717810';
-            s.src = 'https://al5sm.com/tag.min.js';
-        })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+        // Monetag Zone 11717810 OnClick trigger
+        const adScript = document.createElement('script');
+        adScript.dataset.zone = '11717810';
+        adScript.src = 'https://al5sm.com/tag.min.js';
+        document.body.appendChild(adScript);
     }
 }
 
@@ -567,8 +609,8 @@ function fetchVideo(){
 
     statusDiv.innerHTML = "<div style='background:#fff7d6;color:#c77700;padding:12px;border-radius:10px;'>Processing video... ⏳</div>";
 
-    // 5-minute timed ad trigger
-    triggerMonetagAd();
+    // 1st Download par instant ad trigger & har 5 minute gap par agla ad
+    triggerHighEarningAd();
 
     const backendUrl = `/download?url=${encodeURIComponent(inputLink)}&quality=${quality}`;
     window.location.href = backendUrl;
