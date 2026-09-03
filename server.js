@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const https = require('https');
+const http = require('http');
 
 const app = express();
 app.use(cors());
@@ -18,10 +20,10 @@ app.get('/download', async (req, res) => {
     const rapidApiHost = 'ziyotech-youtube-downloader-api.p.rapidapi.com';
     const rapidApiUrl = `https://${rapidApiHost}/rapid/youtube?url=${encodeURIComponent(ytUrl)}&type=video&quality=${requestedQuality}`;
 
-    // Aapki dono RapidAPI keys yahan add kar di gayi hain
+    // Aapki dono RapidAPI keys
     const apiKeys = [
         'a79029a42amsh34dd30872ea2f85p183dcbjsn3e284363d40b', // Pehli API Key
-        '5790f8a63dmsh9d28171653380fep1aa04fjsne748a9af912c'  // Dusri API Key (Limit over hone par automatic switch hogi)
+        '5790f8a63dmsh9d28171653380fep1aa04fjsne748a9af912c'  // Dusri API Key
     ];
 
     let downloadUrl = "";
@@ -81,4 +83,26 @@ app.get('/download', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server chal raha hai: http://localhost:${PORT}`);
+    startSelfPing();
 });
+
+// ==========================================
+// PREVENT RENDER SLEEP MODE (SELF-PING SYSTEM)
+// ==========================================
+function startSelfPing() {
+    // Apni Render website ka exact URL
+    const SITE_URL = process.env.RENDER_EXTERNAL_URL || 'https://yt-downloader-rt9h.onrender.com/';
+
+    // Har 10 minute (600,000 ms) me self-request bhejega
+    const INTERVAL = 10 * 60 * 1000;
+
+    setInterval(() => {
+        const protocol = SITE_URL.startsWith('https') ? https : http;
+
+        protocol.get(SITE_URL, (res) => {
+            console.log(`[Self-Ping Successful] Status Code: ${res.statusCode}`);
+        }).on('error', (err) => {
+            console.error(`[Self-Ping Error]: ${err.message}`);
+        });
+    }, INTERVAL);
+}
