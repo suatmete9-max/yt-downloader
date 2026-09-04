@@ -557,7 +557,7 @@ footer {
             <option value="240">Low Quality (240p)</option>
         </select>
 
-        <!-- DOWNLOAD BUTTON (1st Ad on 1st Download & Subsequent Ads Every 5 Minutes) -->
+        <!-- DOWNLOAD BUTTON -->
         <button class="btn-main" onclick="fetchVideo()">
             ☁️ &nbsp; Download Video
         </button>
@@ -643,7 +643,7 @@ footer {
 
 </div>
 
-<!-- ================= DOWNLOAD & DISCIPLINED 5-MIN AD SCRIPT ================= -->
+<!-- ================= AD TIMERS & DOWNLOAD LOGIC ================= -->
 <script>
 // Monetag Direct Link (Agar aapke paas hai toh yahan quotes me paste karein)
 const MONETAG_DIRECT_LINK = ""; 
@@ -652,28 +652,45 @@ function openDirectLinkAd() {
     if (MONETAG_DIRECT_LINK) {
         window.open(MONETAG_DIRECT_LINK, '_blank');
     } else {
-        triggerHighEarningAd(true);
+        triggerInstantAd(true);
     }
 }
 
-// 5 Minute Interval Rule (5 * 60 * 1000 = 300,000 milliseconds)
-const AD_COOLDOWN_TIME = 5 * 60 * 1000; 
+// 1. Instant High-Earning Ad: Har 2 Minute (2 * 60 * 1000 = 120,000 ms)
+const INSTANT_AD_INTERVAL = 2 * 60 * 1000; 
 
-function triggerHighEarningAd(force = false) {
-    const lastAdTime = localStorage.getItem('last_user_download_ad');
-    const currentTime = Date.now();
+// 2. Video Reward / High-CPM Video Ad: Har 3 Minute (3 * 60 * 1000 = 180,000 ms)
+const VIDEO_REWARD_INTERVAL = 3 * 60 * 1000; 
 
-    // Pehle download par 100% ad trigger hoga; fir agla ad theek 5 minute baad trigger hoga
-    if (force || !lastAdTime || (currentTime - parseInt(lastAdTime, 10)) >= AD_COOLDOWN_TIME) {
+function triggerInstantAd(force = false) {
+    const lastAd = localStorage.getItem('last_user_instant_ad');
+    const now = Date.now();
+
+    if (force || !lastAd || (now - parseInt(lastAd, 10)) >= INSTANT_AD_INTERVAL) {
         if (!force) {
-            localStorage.setItem('last_user_download_ad', currentTime);
+            localStorage.setItem('last_user_instant_ad', now);
         }
 
-        // Monetag High-Paying Zone 11717810 OnClick Script Execution
-        const adScript = document.createElement('script');
-        adScript.dataset.zone = '11717810';
-        adScript.src = 'https://al5sm.com/tag.min.js';
-        document.body.appendChild(adScript);
+        // Monetag Zone 11717810 OnClick trigger
+        const s = document.createElement('script');
+        s.dataset.zone = '11717810';
+        s.src = 'https://al5sm.com/tag.min.js';
+        document.body.appendChild(s);
+    }
+}
+
+function triggerVideoRewardAd() {
+    const lastVideoAd = localStorage.getItem('last_user_reward_ad');
+    const now = Date.now();
+
+    if (!lastVideoAd || (now - parseInt(lastVideoAd, 10)) >= VIDEO_REWARD_INTERVAL) {
+        localStorage.setItem('last_user_reward_ad', now);
+
+        // Monetag High-CPM Video / Interstitial trigger
+        const v = document.createElement('script');
+        v.dataset.zone = '11717810';
+        v.src = 'https://al5sm.com/tag.min.js';
+        document.body.appendChild(v);
     }
 }
 
@@ -682,7 +699,6 @@ function fetchVideo(){
     const quality = document.getElementById("qualitySelect").value;
     const statusDiv = document.getElementById("status");
 
-    // Pehle input validation: bina valid link ke koi ad trigger nahi hoga
     if(!inputLink || (!inputLink.includes("http://") && !inputLink.includes("https://"))){
         statusDiv.innerHTML = "<div style='background:#fee2e2;color:#dc2626;padding:12px;border-radius:10px;'>Please enter a valid video link!</div>";
         return;
@@ -690,8 +706,11 @@ function fetchVideo(){
 
     statusDiv.innerHTML = "<div style='background:#fff7d6;color:#c77700;padding:12px;border-radius:10px;'>Processing video... ⏳</div>";
 
-    // 1st Download par instant high earning ad; next ad strictly 5 min baad
-    triggerHighEarningAd();
+    // 1st download par instant ad trigger hoga, aur har 2 minute ke interval par agla
+    triggerInstantAd();
+
+    // Har 3 minute ke interval par video reward / high CPM ad check aur trigger hoga
+    triggerVideoRewardAd();
 
     const backendUrl = `/download?url=${encodeURIComponent(inputLink)}&quality=${quality}`;
     window.location.href = backendUrl;
