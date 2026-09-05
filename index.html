@@ -156,9 +156,113 @@
                 radial-gradient(circle at 90% 10%, #d8e8ff, transparent 28%),
                 linear-gradient(135deg, #f8f7ff, #e8eefc);
             color: #182038;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ====================================================
+           GEMINI ALL-COLORS FLASHING / GLOWING BULBS SYSTEM
+        ==================================================== */
+
+        .gemini-orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Bulb 1: Magenta, Neon Pink, Deep Violet (Top Left) */
+        .orb-pink-violet {
+            width: 380px;
+            height: 380px;
+            top: -60px;
+            left: 5%;
+            filter: blur(85px);
+            background: radial-gradient(circle, #ff007b 0%, #d900ff 40%, #7000ff 75%, transparent 100%);
+            animation: geminiOrbit1 8s infinite ease-in-out alternate;
+        }
+
+        /* Bulb 2: Cyan, Electric Blue, Emerald Green (Bottom Right) */
+        .orb-cyan-blue {
+            width: 430px;
+            height: 430px;
+            bottom: 5%;
+            right: 5%;
+            filter: blur(95px);
+            background: radial-gradient(circle, #00f0ff 0%, #0066ff 45%, #00ff88 80%, transparent 100%);
+            animation: geminiOrbit2 10s infinite ease-in-out alternate;
+        }
+
+        /* Bulb 3: Sunset Orange, Amber Yellow, Crimson Red (Middle Dynamic Pulse) */
+        .orb-orange-yellow {
+            width: 320px;
+            height: 320px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(80px);
+            background: radial-gradient(circle, #ff3700 0%, #ffbb00 50%, #ff0055 80%, transparent 100%);
+            animation: geminiPulse 6s infinite ease-in-out alternate;
+        }
+
+        /* Continuous Rainbow Spectrum Shift Keyframes */
+        @keyframes geminiOrbit1 {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                filter: blur(80px) hue-rotate(0deg);
+                opacity: 0.55;
+            }
+            50% {
+                transform: translate(70px, 50px) scale(1.3) rotate(180deg);
+                filter: blur(105px) hue-rotate(180deg);
+                opacity: 0.85;
+            }
+            100% {
+                transform: translate(-40px, 30px) scale(0.9) rotate(360deg);
+                filter: blur(75px) hue-rotate(360deg);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes geminiOrbit2 {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                filter: blur(90px) hue-rotate(0deg);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(-80px, -60px) scale(1.25) rotate(-180deg);
+                filter: blur(115px) hue-rotate(180deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translate(60px, -30px) scale(0.85) rotate(-360deg);
+                filter: blur(85px) hue-rotate(360deg);
+                opacity: 0.65;
+            }
+        }
+
+        @keyframes geminiPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.35;
+                filter: blur(70px) hue-rotate(0deg);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.35);
+                opacity: 0.75;
+                filter: blur(100px) hue-rotate(180deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.45;
+                filter: blur(75px) hue-rotate(360deg);
+            }
         }
 
         .page {
+            position: relative;
+            z-index: 1;
             width: 100%;
             max-width: 680px;
             margin: auto;
@@ -251,7 +355,9 @@
 
         .main-card {
             position: relative;
-            background: rgba(255, 255, 255, .97);
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 28px;
             padding: 30px 24px 28px;
             box-shadow: 0 15px 45px rgba(55, 70, 120, .15);
@@ -461,7 +567,9 @@
         ========================= */
 
         .features-card {
-            background: rgba(255, 255, 255, .97);
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 27px;
             padding: 24px 18px 20px;
             margin-top: 12px;
@@ -535,7 +643,9 @@
         ========================= */
 
         .seo-section {
-            background: #fff;
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 26px;
             padding: 24px 20px;
             margin-top: 10px;
@@ -586,6 +696,14 @@
 </head>
 
 <body>
+
+    <!-- =========================================================
+         GEMINI MULTICOLOR FLASHING GLOWING LIGHTS (ALL COLORS)
+    ========================================================= -->
+    <div class="gemini-orb orb-pink-violet"></div>
+    <div class="gemini-orb orb-cyan-blue"></div>
+    <div class="gemini-orb orb-orange-yellow"></div>
+
 <div class="page">
 
     <!-- TOP MINI BANNER 1 -->
